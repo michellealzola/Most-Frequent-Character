@@ -44,11 +44,20 @@ namespace Most_Frequent_Character
 
             int max = FindMax(countList);
 
-            int position = countList.IndexOf(max);
+            if(max > 1)
+            {
+                int position = countList.IndexOf(max);
 
-            char mostFreqcharacter = charListUnique[position];
+                char mostFreqcharacter = charListUnique[position];
 
-            lblOutMostFreqChar.Text = String.Format("The most frequent character in the string is {0} with {1} occurrences", mostFreqcharacter.ToString(), max.ToString());
+                lblOutMostFreqChar.Text = String.Format("The most frequent character in the string is {0} with {1} occurrences", mostFreqcharacter.ToString(), max.ToString());
+            }
+            else
+            {
+                lblOutMostFreqChar.Text = "All characters are unique";
+            }
+
+            
         }
 
         private int FindMax(List<int> countList)
